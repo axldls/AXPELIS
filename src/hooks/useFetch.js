@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_ENDPOINT = "https://www.omdbapi.com/?apikey=25b7a39d";
+const API_ENDPOINT = "https://www.omdbapi.com/?apikey=90df80f1";
 
 export const useFetch = (params) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,19 +14,19 @@ export const useFetch = (params) => {
     fetch(url)
       .then((respuesta) => respuesta.json())
       .then((respuestaJson) => {
-        if(respuestaJson.response === "true"){
-          setData(respuestaJson.search);
+        console.log("Respuesta OMDb:", respuestaJson);
+        if (respuestaJson.Response === "True") {
+          setData(respuestaJson.Search); // lista de películas
           setError(false);
-        }else {
+        } else {
           setError(true);
+          setData(null);
         }
         setIsLoading(false);
-        setData(respuestaJson);     
-        setIsLoading(false);         
       })
       .catch((error) => {
-        console.error(error);
-        setError(true);              
+        console.error("Error en fetch:", error);
+        setError(true);
         setIsLoading(false);
       });
   };

@@ -9,7 +9,7 @@ export const DataProvider = ({ children }) => {
 
 
     return(
-        <DataContext.Provider value={{setQuery, isLoading, error, data}}>
+        <DataContext.Provider value={{query, setQuery, isLoading, error, data}}>
             { children }
         </DataContext.Provider>
     )
