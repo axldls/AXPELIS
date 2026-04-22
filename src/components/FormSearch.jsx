@@ -19,8 +19,8 @@ const FormSearch = () => {
         <div className="FormSearch">
             <h2>AXMOVIES</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Busca tu pelicula favorita" onChange={e =>setTitle(e.target.value)}/>
-                <input type="submit" value={"Buscar"} />
+                <input className="search-input" type="text" placeholder="Busca tu pelicula favorita" onChange={e =>setTitle(e.target.value)}/>
+                <input className="search-button" type="submit" value={"Buscar"} />
             </form>
         </div> 
     );

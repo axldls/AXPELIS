@@ -22,9 +22,40 @@
   display: flex;
   justify-content: center;   
 }
+.FormSearch input[type="text"] {
+  width: 300px;             
+  padding: 10px;             
+  border: 2px solid #1c1c1c; 
+  border-radius: 6px;        
+  font-size: 16px;           
+  outline: none;             
+  transition: border-color 0.3s ease;
+}
+.FormSearch input[type="submit"] {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff; 
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.FormSearch input[type="submit"]:hover {
+  background-color: #0056b3; 
+  transform: scale(1.05);    
+}
+
+.FormSearch input[type="submit"]:active {
+  transform: scale(0.95);    
+}
+
 .movies-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* grilla adaptable */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   padding: 1rem;
   background-color: #171a4a;
@@ -33,25 +64,33 @@
   display: flex;
   flex-direction: column;
   align-items:safe;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.movies-content {
+  display: grid;
+  grid-template-columns: repeat(5, 200px); /* 5 columnas de 200px */
+  gap: 1rem;
+  justify-content: center; /* centra el grid */
+  padding: 1rem;
+  background-color: #171a4a;
 }
 
 .item-movie {
-  background-color: #1c1c1c;   /* fondo oscuro para contraste */
-  color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  color: white;
   width: 200px;
   height: 300px;
-  background-size: contain;   /* ajusta sin recortar */
+  background-color: #000;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #000;     /* relleno negro */
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
+
+
 
 
 .item-movie:hover {
