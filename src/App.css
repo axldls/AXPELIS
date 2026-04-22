@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.FormSearch {
+  display: flex;
+  align-items: center;       
+  background-color: #2f2c79;
+}
+
+.FormSearch h2 {
+  margin: 0;
+  color: aliceblue;
+  text-align: left;          
+  flex: 0;                   
+}
+
+.FormSearch form {
+  flex: 1;                   
+  display: flex;
+  justify-content: center;   
+}
