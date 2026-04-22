@@ -14,7 +14,13 @@ export const useFetch = (params) => {
     fetch(url)
       .then((respuesta) => respuesta.json())
       .then((respuestaJson) => {
-        console.log("data:", respuestaJson);
+        if(respuestaJson.response === "true"){
+          setData(respuestaJson.search);
+          setError(false);
+        }else {
+          setError(true);
+        }
+        setIsLoading(false);
         setData(respuestaJson);     
         setIsLoading(false);         
       })
