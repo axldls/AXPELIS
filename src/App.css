@@ -84,12 +84,14 @@ html, body {
 /* ===== CONTENEDOR DE PELÍCULAS ===== */
 .movies-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
-  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem 1rem;
   background-color: #171a4a;
   flex: 1;
+  width: 100%;
 }
 
 .info {
@@ -183,7 +185,7 @@ html, body {
   }
 
   .movies-content {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 1rem 0.5rem;
   }
@@ -197,7 +199,7 @@ html, body {
   }
 
   .movies-content {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
     padding: 1.5rem 1rem;
   }
@@ -206,7 +208,7 @@ html, body {
 /* Tablets (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .movies-content {
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     padding: 2rem 1.5rem;
   }
@@ -215,7 +217,7 @@ html, body {
 /* Laptops (1025px - 1440px) */
 @media (min-width: 1025px) and (max-width: 1440px) {
   .movies-content {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
     padding: 2rem 2rem;
   }
@@ -224,7 +226,7 @@ html, body {
 /* Pantallas grandes (1441px+) */
 @media (min-width: 1441px) {
   .movies-content {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
     padding: 2rem 3rem;
   }
