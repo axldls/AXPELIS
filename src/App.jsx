@@ -3,7 +3,6 @@ import Bubbles from './components/Bubbles';
 import { Route, Routes, HashRouter } from 'react-router-dom';
 import MainPage from './components/MainPage';
 import SingleMovie from './components/SingleMovie';
-import { HashRouter } from 'react-router-dom';
 
 
 function App() {
