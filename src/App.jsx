@@ -9,7 +9,7 @@ function App() {
 
   return (
       <div className='app'>
-        <HashRouter basename='/AXPELIS'>
+        <HashRouter>
             <Routes>
               <Route path="/" element={<MainPage/>} />
               <Route path="/movies/:id" element={<SingleMovie/>} />
