@@ -131,7 +131,7 @@ html, body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
-.item-movie h4 {
+.info h4 {
   margin: 0 0 0.5rem 0;
   text-align: center;
   font-size: clamp(0.75rem, 2vw, 1rem);
@@ -139,7 +139,7 @@ html, body {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.item-movie p {
+.info p {
   margin: 0.5rem 0;
   font-weight: bold;
   text-align: center;
@@ -147,7 +147,7 @@ html, body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-.row-info {
+.info .row-info {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
