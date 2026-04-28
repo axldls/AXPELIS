@@ -18,13 +18,13 @@
   border-radius: 50%;
   background: radial-gradient(
     circle at 35% 35%,
-    rgba(0, 255, 255, 0.9),
-    rgba(0, 150, 200, 0.7)
+    rgba(0, 180, 220, 0.7),
+    rgba(0, 100, 150, 0.5)
   );
-  border: 2px solid rgba(0, 200, 255, 0.8);
+  border: 2px solid rgba(0, 150, 200, 0.6);
   box-shadow: inset -2px -2px 8px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(0, 255, 255, 0.8),
-    inset 1px 1px 8px rgba(255, 255, 255, 0.6);
+    0 0 25px rgba(0, 180, 220, 0.6),
+    inset 1px 1px 8px rgba(255, 255, 255, 0.4);
   animation: float-up 6s ease-out forwards;
 }
 

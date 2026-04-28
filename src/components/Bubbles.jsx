@@ -6,7 +6,7 @@ const Bubbles = () => {
 
   useEffect(() => {
     const generateBubbles = () => {
-      const newBubbles = Array.from({ length: 5 }, (_, i) => ({
+      const newBubbles = Array.from({ length: 10 }, (_, i) => ({
         id: Math.random(),
         left: Math.random() * 100,
         delay: Math.random() * 2,
