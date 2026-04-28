@@ -1,16 +1,21 @@
 import './App.css'
-import FormSearch from './components/FormSearch'
-import Movies from "./components/Movies";
 import Bubbles from './components/Bubbles';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import MainPage from './components/MainPage';
+import SingleMovie from './components/SingleMovie';
 
 
 function App() {
 
   return (
       <div className='app'>
-           <Bubbles />
-           <FormSearch class="form-search"/>
-           <Movies/>
+        <Bubbles/>
+        <BrowserRouter basename='/AXPELIS'>
+            <Routes>
+              <Route path="/" element={<MainPage/>} />
+              <Route path="/movies/:id" element={<SingleMovie/>} />
+            </Routes>
+        </BrowserRouter>
       </div>
   )
 }

@@ -16,7 +16,7 @@ export const useFetch = (params) => {
       .then((respuestaJson) => {
         console.log("Respuesta OMDb:", respuestaJson);
         if (respuestaJson.Response === "True") {
-          setData(respuestaJson.Search); // lista de películas
+          setData(respuestaJson.Search || respuestaJson); // lista de películas
           setError(false);
         } else {
           setError(true);
