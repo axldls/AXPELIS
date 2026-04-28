@@ -1,103 +1,246 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ===== FORMULARIO DE BÚSQUEDA ===== */
 .FormSearch {
   display: flex;
-  align-items: center;       
+  align-items: center;
+  justify-content: space-between;
   background-color: #2f2c79;
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .FormSearch h2 {
   margin: 0;
   color: aliceblue;
-  text-align: left;          
-  flex: 0;            
-  font-size: 3rem;       
+  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .FormSearch form {
-  flex: 1;                   
+  flex: 1;
   display: flex;
-  justify-content: center;   
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 250px;
 }
+
 .FormSearch input[type="text"] {
-  width: 300px;             
-  padding: 10px;             
-  border: 2px solid #1c1c1c; 
-  border-radius: 6px;        
-  font-size: 16px;           
-  outline: none;             
+  width: clamp(150px, 100%, 300px);
+  padding: 0.75rem 1rem;
+  border: 2px solid #1c1c1c;
+  border-radius: 6px;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  outline: none;
   transition: border-color 0.3s ease;
 }
+
+.FormSearch input[type="text"]:focus {
+  border-color: #007bff;
+}
+
 .FormSearch input[type="submit"] {
-  padding: 10px 20px;
-  margin-left: 10px;
+  padding: 0.75rem 1.25rem;
   border: none;
   border-radius: 6px;
-  background-color: #007bff; 
+  background-color: #007bff;
   color: #fff;
-  font-size: 16px;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
 }
 
 .FormSearch input[type="submit"]:hover {
-  background-color: #0056b3; 
-  transform: scale(1.05);    
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 .FormSearch input[type="submit"]:active {
-  transform: scale(0.95);    
+  transform: scale(0.95);
 }
 
-.movies-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
-  background-color: #171a4a;
-}
-.info{
-  display: flex;
-  flex-direction: column;
-  align-items:safe;
-  font-size: large;
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* ===== CONTENEDOR DE PELÍCULAS ===== */
 .movies-content {
   display: grid;
-  grid-template-columns: repeat(5, 200px); /* 5 columnas de 200px */
-  gap: 1rem;
-  justify-content: center; /* centra el grid */
-  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem 1rem;
   background-color: #171a4a;
+  flex: 1;
 }
 
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    transparent 100%
+  );
+  border-radius: 8px;
+}
+
+/* ===== TARJETA DE PELÍCULA ===== */
 .item-movie {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   color: white;
-  width: 200px;
-  height: 300px;
+  aspect-ratio: 2 / 3;
   background-color: #000;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
-
-
-
 .item-movie:hover {
-  transform: scale(1.05);      /* efecto al pasar el mouse */
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.item-movie h4 {
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .item-movie p {
   margin: 0.5rem 0;
   font-weight: bold;
+  text-align: center;
+  font-size: clamp(0.65rem, 1.5vw, 0.875rem);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.row-info {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+  .FormSearch {
+    flex-direction: column;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .FormSearch h2 {
+    width: 100%;
+    order: -1;
+  }
+
+  .FormSearch form {
+    width: 100%;
+    flex-direction: column;
+    min-width: auto;
+  }
+
+  .FormSearch input[type="text"],
+  .FormSearch input[type="submit"] {
+    width: 100%;
+  }
+
+  .movies-content {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* Móviles medianos (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .FormSearch {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .movies-content {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.25rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .movies-content {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Laptops (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .movies-content {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 2rem;
+  }
+}
+
+/* Pantallas grandes (1441px+) */
+@media (min-width: 1441px) {
+  .movies-content {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 3rem;
+  }
+}
+
+/* Orientación de paisaje */
+@media (orientation: landscape) and (max-height: 500px) {
+  .FormSearch {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .FormSearch h2 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+  }
+
+  .movies-content {
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+  }
 }
