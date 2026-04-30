@@ -1,0 +1,262 @@
+.footer {
+  background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0f1f35 100%);
+  color: #e0e0e0;
+  padding: 3rem 2rem 2rem;
+  margin-top: auto;
+  border-top: 2px solid #2d4a7c;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-section h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  background: linear-gradient(90deg, #00d4ff, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.footer-section h4 {
+  font-size: 1rem;
+  color: #00d4ff;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-section p {
+  font-size: 0.9rem;
+  color: #7a8fa6;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-section li a {
+  color: #7a8fa6;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.footer-section li a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00d4ff, #00e5ff);
+  transition: width 0.3s ease;
+}
+
+.footer-section li a:hover {
+  color: #00d4ff;
+}
+
+.footer-section li a:hover::before {
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  color: #7a8fa6;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-link:hover {
+  color: #00d4ff;
+  background: rgba(0, 212, 255, 0.1);
+  border-color: #00d4ff;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(45, 74, 124, 0.5);
+  padding-top: 1.5rem;
+  text-align: center;
+  color: #7a8fa6;
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin: 0.5rem 0;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Móviles pequeños (320px - 480px) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .footer-section {
+    gap: 0.5rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.25rem;
+  }
+
+  .footer-section h4 {
+    font-size: 0.9rem;
+  }
+
+  .footer-section p {
+    font-size: 0.85rem;
+  }
+
+  .social-links {
+    gap: 0.5rem;
+  }
+
+  .social-link {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom {
+    padding-top: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom p {
+    margin: 0.3rem 0;
+  }
+}
+
+/* Móviles medianos (481px - 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+  .footer {
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.4rem;
+  }
+
+  .footer-section h4 {
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablets pequeñas (641px - 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+  .footer {
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablets medianas (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer {
+    padding: 3rem 2rem 2rem;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Laptops (1025px+) */
+@media (min-width: 1025px) {
+  .footer-content {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-section {
+    gap: 1rem;
+  }
+}
+
+/* Orientación de paisaje */
+@media (orientation: landscape) and (max-height: 600px) {
+  .footer {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .footer-content {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section h3,
+  .footer-section h4 {
+    font-size: 0.95rem;
+  }
+
+  .footer-section p {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom {
+    padding-top: 1rem;
+    font-size: 0.8rem;
+  }
+}

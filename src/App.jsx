@@ -1,8 +1,8 @@
 import './App.css'
-import Bubbles from './components/Bubbles';
 import { Route, Routes, HashRouter } from 'react-router-dom';
 import MainPage from './components/MainPage';
 import SingleMovie from './components/SingleMovie';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
               <Route path="/movies/:id" element={<SingleMovie/>} />
             </Routes>
         </HashRouter>
+        <Footer />
       </div>
   )
 }
