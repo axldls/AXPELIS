@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import {useFetch} from "../hooks/useFetch";
 import "./SingleMovie.css";
 
@@ -21,6 +21,7 @@ const SingleMovie =() => {
         <div className="single-movie">
             <img src={Poster} alt={Title} />
             <div className="single-info">
+                <Link to="/" className="back-button">← Volver al Inicio</Link>
                 <h2>{Title}</h2>
                 <p><strong>Year:</strong> {Year}</p>
                 <p><strong>Genre:</strong> {Genre}</p>
